@@ -1,0 +1,7 @@
+import nltk
+nltk.download('stopwords')
+Or from command line (thanks to Rafael Valero's answer):
+
+python -m nltk.downloader stopwords
+
+pip install boto3

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+<br>
+  <div class="row">
+    {% for employee in employees %}
+    <div class="col-lg-4">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="d-inline-block mb-2 text-primary"> {{ employee[1] }}</h3>
+          <p class="mb-0">Email: {{employee[2]}}</p>
+          <div class="mb-1 text-muted">Current Role: {{employee[3]}}</div>
+          <p class="card-text mb-auto"> Work Experience: {{employee[4]}}</p>
+          <p class="card-text mb-auto"> SkillSet: {{employee[5]}}</p>
+          <p class="card-text mb-auto"> Education: {{employee[6]}}</p>
+
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+  {% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+<br>
+  <div class="row">
+    {% for application in applications %}
+    <div class="col-lg-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Name: {{application[2]}}</strong>
+          <div class="mb-1 text-muted"><strong class="d-inline-block mb-2 text-primary">Skillset:</strong> {{application[6][1:-1]}}</div>
+          <div class="mb-1 text-muted"><strong class="d-inline-block mb-2 text-primary">Experience in years:</strong> {{application[5]}}</div>
+          <div class="mb-1 text-muted"><strong class="d-inline-block mb-2 text-primary">Relevance Score:</strong> {{application[8]}}</div>
+          <p class="card-text mb-auto"><strong class="d-inline-block mb-2 text-primary">Email: </strong>{{application[3]}}</p>
+        </div>
+        <div></div>
+        <div class="d-lg-block">
+          <a href="/resume/{{application[2]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">CV / Resume</a>
+
+          <a href="/schedule_interview/{{application[2]}}/{{role_name}}/{{application[3]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">Schedule Interview</a>
+        </div>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+  
+</section>
+{% endblock %}

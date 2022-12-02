@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+<br>
+  <div class="row">
+    {% for c_feedback in feedback %}
+    <div class="col-lg-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Name: {{c_feedback[0]}}</strong>
+          <p class="card-text mb-auto"><strong class="d-inline-block mb-2 text-primary">Role: </strong>{{c_feedback[2]}}</p>
+          <div class="mb-1 text-muted"><strong class="d-inline-block mb-2 text-primary">Feedback: </strong> {{c_feedback[1]}}</div>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <a href="/resume/{{c_feedback[0]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">CV / Resume</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+</section>
+{% endblock %}

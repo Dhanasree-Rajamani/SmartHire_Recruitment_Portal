@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+<br>
+  <div class="row">
+    {% for job in jobs %}
+    <div class="col-lg-4">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <!-- job[1] is Role name -->
+          <h3 class="mb-0">{{job[1]}}</h3>
+          <!-- <div class="mb-1 text-muted">Date: {{job.date_posted}}</div> -->
+          <!-- job[5] is Role description -->
+          <p class="card-text mb-auto">{{job[5]}}</p>
+        </div>
+        <div></div>
+        <div class="d-lg-block">
+          {% if current_user.usertype == 'Company' %}
+            <a href="/show_applications/{{job[1]}}"  class="btn btn-primary mb-2" role="button" aria-disabled="true">Applications</a>
+
+            <a href="/close_role/{{job[1]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">Close Position</a>
+          {% endif %}
+        </div>
+        <!-- <div class="col-auto d-none d-lg-block">
+          {% if current_user.usertype == 'Company' %}
+          <a href="/show_applications/{{job[1]}}"  class="btn btn-primary mb-2" role="button" aria-disabled="true">Applications</a>
+          {% else %}
+          <a href="/post_cvs/{{job[1]}}"  class="btn btn-primary mb-2" role="button" aria-disabled="true">Shortlisted</a>
+          {% endif %}
+        </div> -->
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+  {% endblock %}

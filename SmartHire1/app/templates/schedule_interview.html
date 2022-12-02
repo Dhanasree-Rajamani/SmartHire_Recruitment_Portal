@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="jumbotron text-center">
+<br>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Candidate Name: {{candidate_name}}</strong>
+          <p class="card-text mb-auto"><strong class="d-inline-block mb-2 text-primary">Role: </strong> {{role_name}}</p>
+          <div class="mb-1 text-muted"><strong class="d-inline-block mb-2 text-primary">Candidate Email: </strong> {{candidate_email}}</div>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <a href="/resume/{{candidate_name}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">CV / Resume</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Interviewer Name: {{interviewer[1]}}</strong>
+          <p class="card-text mb-auto"><strong class="d-inline-block mb-2 text-primary">Role: </strong>{{interviewer[3]}}</p>
+          <div class="mb-1 text-muted"><strong class="d-inline-block mb-2 text-primary">Interviewer Email: </strong> {{interviewer[2]}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+{% endblock %}
