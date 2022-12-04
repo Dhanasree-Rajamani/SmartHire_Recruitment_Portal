@@ -16,8 +16,9 @@
         <div></div>
         <div class="d-lg-block">
           <a href="/resume/{{application[2]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">CV / Resume</a>
-
-          <a href="/schedule_interview/{{application[2]}}/{{role_name}}/{{application[3]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">Schedule Interview</a>
+          {% if current_user.usertype == 'Company' %}
+            <a href="/schedule_interview/{{application[2]}}/{{role_name}}/{{application[3]}}"  class="btn btn-primary mb-2" role="button" target="_blank" aria-disabled="true">Schedule Interview</a>
+          {% endif %}
         </div>
       </div>
 
