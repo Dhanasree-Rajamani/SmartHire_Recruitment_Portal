@@ -207,14 +207,14 @@ def posted_jobs():
 @login_required
 def show_applications(role_name):
     print("Show application", role_name)
-    if current_user.usertype == "Company":
-        candidates = getRelevantCandidates(connection=connection, cursor=cursor, role_name=role_name)
-        print(candidates)
+    #if current_user.usertype == "Company":
+    candidates = getRelevantCandidates(connection=connection, cursor=cursor, role_name=role_name)
+    print(candidates)
 
-        return render_template('show_applications.html', applications=candidates, Random_Review=Random_Review, role_name=role_name)
-    else:
+    return render_template('show_applications.html', applications=candidates, Random_Review=Random_Review, role_name=role_name)
+    #else:
         # TODO (Permission denied)
-        pass
+        #pass
 
 
 @app.route("/schedule_interview/<candidate_name>/<role_name>/<candidate_email>", methods=['GET'])
